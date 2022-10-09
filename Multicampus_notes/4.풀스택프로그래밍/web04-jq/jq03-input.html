@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="resources/js/jquery-3.6.0.min.js"></script>
+    <script>
+        function inputText(){
+            alert($("input:text").val())
+        }
+        function inputRadio(){
+            var val=$('input:radio').val()
+            //.innerHTML
+            $('#a').html(val)
+        }
+        function inputCheck(){
+            var checkVal = $('input:checkbox').val()
+            alert(checkVal)
+        }
+        $(function(){
+            $('select').change(function(){
+            var opt= $('select>option:selected')
+            alert(opt.val()+' index:  '+$('select>option').index(opt))
+        })
+        })
+        
+        
+    </script>
+</head>
+<body>
+    <form>
+        <input type="text">
+        <input type="button" value="선택" onclick="inputText()">
+        <input type="radio" value="radio val" onclick="inputRadio()">radio
+        <div id="a"></div>
+        <input type="checkbox" value="check val" onclick="inputCheck()">check
+        <select>
+            <option value="computer">컴퓨터게임</option>
+            <option value="computer">콘솔게임</option>
+            <option value="computer">모바일 게임</option>
+
+        </select>
+    </form>
+    
+</body>
+</html>

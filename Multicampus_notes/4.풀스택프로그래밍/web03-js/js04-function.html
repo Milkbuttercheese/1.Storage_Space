@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function func01(){
+            alert('함수의 이름이 있습니다');
+        }
+        // 변수 값으로 함수가 들어가 있다.
+        // 변수()로 호출할 수 있다
+        var func02= function(){
+            alert('함수의 이름이 없어요!');
+        }
+       // 변수 저장없이 바로 실행시키기
+        function func03(){
+            (function(){
+                alert('즉시 실행!')
+            })();
+        }
+        function literalPrn(literal){
+            literal('안녕하세요, 함수 형태의 값! 입니다')
+        }
+        function func04(){
+            literalPrn(function(msg){alert(msg);})
+        }
+        // func04호출>literalPrn호출>paramter literal=function(msg){alert(msg)}
+        // 함수명()로 실행가능! ==>
+        // function(msg){alert(msg);})('안녕하세요, 함수 형태의 값! 입니다')
+        // 로 실행
+
+        function closureFunc(val){
+            var suffix=' 님, 안녕하세요!'
+            function innerFunc(){
+                alert(val+suffix);
+            }
+            return innerFunc;
+        }
+        var closureTest01= closureFunc('우성균');
+        // 클로져: 자식함수가 부모함수의 변수를 사용하는것
+        
+        function closureTest02(val){
+            closureFunc(val)();
+        }
+        
+        
+    </script>
+</head>
+<body>
+    <h1> function : 기능 </h1>
+    <h2> 함수의 종류 </h2>
+    <p onclick="func01()"> 명시적 함수 </p>
+    <p onclick="func02()"> 익명 함수 </p>
+    <p onclick="func03()"> 즉시 실행 함수 </p>
+    <p onclick="func04()"> 함수 리터럴 </p>
+    <p onclick="closureTest01()"> 클로저: 외부 함수에 접근 가능 (변수 등) </p>
+    <p onclick="closureTest02('혜리')"> 클로저: 외부 함수에 접근 가능 (변수 등) </p>
+</body>
+</html>

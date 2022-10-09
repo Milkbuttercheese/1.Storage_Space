@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="resources/js/jquery-3.6.0.min.js"></script>
+</head>
+<style>
+    .box{
+        border: 2px solid red;
+    }
+    #menu{
+        background-color:skyblue;
+        text-align: right;
+    }
+    a{
+        text-decoration: none;
+        font-size: 20px;
+    }
+    #menu div{
+        display: inline-block;
+        margin-right: 10px;
+    }
+</style>
+<script>
+    /*
+    함수들
+    1.ele_name.addClass(class_name): 특정 요소에 클래스를 추가
+    2.ele_name.wrap(ele_name2): 특정 요소ele_name 좌우를 요소ele_name2로 감싼다
+    3.$('selector').each(function(idx){}) : selector로 선택된 노드리스트의
+    원소들을 index로 하여, function을 반복시행함
+    */
+    /*
+    1. sub_menu 첫번째 요소에
+    */
+    $(function(){
+        var $box= $('<div>').addClass('box')
+            //<div class='box'></div>가 생성됨, 변수앞 $는 의미없음
+        $('.sub_menu:first').wrap($box)
+        $('.sub_menu').click(function(){
+            $('.sub_menu').each(function(){
+                if($(this).parent().is('.box')){
+                    $(this).unwrap('.box')
+                }
+            })
+            $(this).wrap($box)
+        })
+        $('a').wrapInner('<span></span>')
+        // $('b').wrapAll("<div class='box'></div>")
+    })
+</script>
+<body>
+    <div id="menu">
+        <div class="sub_menu">
+            <a href="#"><span>국비지원</span></a>
+        </div>
+        <div class="sub_menu">
+            <a href="#">훈련검색</a>
+        </div>
+        <div class="sub_menu">
+            <a href="#">기관검색</a>
+        </div>
+        <div class="sub_menu">
+            <a href="#">질문답변</a>
+        </div>
+        <div class="sub_menu">
+            <a href="#">과정후기</a>
+        </div>
+    </div>
+    <b>1</b><br>
+    <b>2</b><br>
+    <b>3</b><br>
+</body>
+</html>

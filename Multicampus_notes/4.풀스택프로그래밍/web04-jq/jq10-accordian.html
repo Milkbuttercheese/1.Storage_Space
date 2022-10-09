@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="resources/js/jquery-3.6.0.min.js"></script>
+    <script>
+    $(function(){
+        $('b').click(function(){
+            //1. 클릭된 b 태그 옆 태그를 슬라이드한다
+            //2 클릭된 b 태그의 부모=>형제에 ul태그가 있다
+            //3.그 ul태그를 찾아 슬라이드를 한다
+            $(this).next().slideToggle()
+            $(this).parent().siblings().find('ul').slideUp()
+        })
+    })
+    </script>
+</head>
+<body>
+    <p> 메뉴 만들기 </p>
+    <ul type="square" class="main_menu">
+        <li class="sub_menu1"><b>(1)CSS 선택자</b>
+            <ul type="circle" class="sub_menu2">
+                <li>tag 선택</li>
+                <li>id 선택</li>
+                <li>class 선택</li>
+                <li>parent child 선택</li>
+                <li>parent &gt; child 선택</li>
+                <li>n-th child 선택</li>
+                <li>first-child 선택</li>
+                <li>last-child 선택</li>
+            
+            </ul>
+        <li class="sub_menu1"><b>(2)속성 선택자</b>
+            <ul type="cirle" class="sub_menu2">
+                <li>[attr]</li>
+                 <li>[attr=value]</li>
+                 <li>[attr!=value]</li>
+            </ul>
+        </li>
+        <li class="sub_menu1"><b>(3)폼 선택자</b>
+            <ul type="circle" class="sub_menu2">
+                <li> input:타입</li>
+            </ul>
+        </li>
+        <li class="sub_menu1"><b>(4)사용자 정의 선택자 </b>
+            <ul type="circle" class="sub_menu2">
+                <li>eq(n)</li>
+                <li>first</li>
+                <li>last</li>
+                <li>even</li>
+                <li>odd</li>
+                <li>parent</li>
+            </ul>
+        </li>
+        </li>
+    </ul>
+</body>
+</html>

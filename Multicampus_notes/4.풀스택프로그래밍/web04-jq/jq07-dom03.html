@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="resources/js/jquery-3.6.0.min.js"> </script>
+    <script>
+        $(function(){
+            $('p:eq(0)').add('span').css('color','blue')
+            // $('p:eq(0)').css('color','blue')
+            //$('span').css('color','blue')
+            // 여러 요소에 동일한 속성을 부여하고 싶을때 사용한다
+      
+            $('div').children().click(function(){
+                if($(this).prop('tagName')=='SPAN'){
+                    alert('span tag 클릭')
+                    $(this).css('color','red')
+                }
+                if($(this).is('p')){
+                    $(this).css('background-color','yellow')
+                }
+                $('b').click(function(){
+                    $('div').children().eq(0).add('span').css('color','blue')
+                    $('div').children('p').css('background-color','')
+                })
+
+            })
+        
+            //b태그를 클릭하면 위에서 적용됬던 css를 돌려주세요
+
+        })
+
+    </script>
+</head>
+<body>
+    <div>
+        <p>add()</p>
+        <span>선택한 엘리먼트에 추가적으로 selector 표현식을 작성</span>
+        <p>is()</p>
+        <b>선택한 엘리먼트들 중 원하는 엘리먼트가 있는지 확인</b>
+    </div>
+    
+</body>
+</html>

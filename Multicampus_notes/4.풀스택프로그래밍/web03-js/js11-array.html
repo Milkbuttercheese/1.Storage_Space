@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var arrObj= new Array()
+        var arrObj2= ['v1','v2',3,4]
+       // alert(typeof(arrObj))
+        //alert(typeof(arrObj2))
+        var arrObj3= new Array(5)
+        //alert(arrObj)
+        //alert(arrObj3)
+        //alert(arrObj3[0])
+        
+        var arrObj4=new Array(1,2,3,4,5);
+        //alert(arrObj4)
+        //alert(arrObj4[2])
+
+        function multiArr(){
+            var arrLen=3
+            var arr= new Array(arrLen)
+            // 배열안에 3칸짜리 배열을 넣어 3x3행렬을 만듬
+            for (var i=0; i<arr.length; i++){
+                arr[i] = new Array(arrLen)
+            }
+            arr[0][0]="수박"
+            arr[0][1]="키위"
+            arr[0][2]="포도"
+
+            arr[1][0]="1"
+            arr[1][1]="2"
+            arr[1][2]="3"
+
+            arr[2][0]=['js','jq']
+            arr[2][1]=['javascript',['js','jquery']]
+            arr[2][2]=['python','django']
+
+        //배열에 있는 3 출력하기
+        alert(arr[1][2])
+        //배열에 있는 jquery ㅜㄹ력하기
+        alert(arr[2][1][1][1])
+        }
+
+        function joinTest(){
+            var arr=[1,2,3,4,5]
+            var res=arr.join('+')
+            alert(res)
+            alert(eval(res))
+        }
+        function sortTest01(){
+            var arr= ['a','b','d','e','c']
+            arr.sort()
+            alert(arr)
+            //아스키코드 순 정렬
+        }
+        function sortTest02(){
+            var arr=[1,3,2,22,11,10,8,9]
+            arr.sort(compareNum)
+            alert(arr)
+            //문자열로 인식하기에 아스키코드 순 정렬
+        }
+        // 크기 비교 함수
+        function compareNum(a,b){
+            return a-b;
+        }
+        // 원소의 배열 위치를 반대로 하는 함수
+        function reverseTest(){
+            var arr=[33,28,11,7,13,27]
+           // arr.reverse()
+            //alert(arr)
+        //숫자를 내림차순 배열하고 싶다면?
+            arr.sort(compareNum)
+            arr.reverse()
+            alert(arr)
+        //숫자를 내림차순 배열하고 싶다면? - ver2
+            //arr.sort(function(a,b){return b-a})
+           // alert(arr)
+        }
+        function pushAndPop(){
+            var queue= new Array()
+            queue.push('first')
+            queue.push('second')
+            queue.push('third')
+            alert(queue)
+
+            //shift는 배열 왼쪽, pop은 배열 오른쪽을 자름
+            var a=queue.shift()
+            console.log(a)
+            alert(queue)
+            //alert(queue[0])
+
+            var b= queue.pop()
+            console.log(b)
+            alert(queue)
+
+        }
+        function sliceTest(){
+            var arrayTest01 = new Array(1,2,3,4,5,6,7)
+            var array01 = arrayTest01.slice(1,3)
+            //alert(array01)
+
+            var arrayTest02 =new Array(4)
+            arrayTest02[0]= new Array(1,2)
+            arrayTest02[1]= new Array(3,4)
+            arrayTest02[2]= new Array(5,6)
+            arrayTest02[3]= new Array(7,8)
+            var array02= arrayTest02.slice(1,3)
+            alert(array02)
+            array02[0][0]=33 
+            // 배열의 부분배열의 값을 바꿔도 배열값이 바뀐다
+            // 즉 연동된다!
+            alert(array02)
+            alert(arrayTest02)
+        }
+    </script>
+</head>
+<body>
+    <ul>
+        <li onclick="multiArr()"> 다중 배열 </li>
+        <li onclick="joinTest()"> join 함수 </li>
+        <li> 배열 정렬 </li>
+            <ul>
+                <li onclick="sortTest01()">sort(): 문자 정렬</li>
+                <li onclick="sortTest02()">sort(): 숫자 정렬</li>
+                <li onclick="reverseTest()">reverse(): 거꾸로</li>
+            </ul>
+    </ul>
+    <li onclick="pushAndPop()"> 배열 저장 방식
+        <ul>
+            <li>push()</li>
+            <li>shift()</li>
+            <li>pop()</li>
+        </ul>
+    </li>
+    <li onclick="sliceTest()">slice():배열의 부분을 갖고 새 배열 생성</li>
+</body>
+</html>

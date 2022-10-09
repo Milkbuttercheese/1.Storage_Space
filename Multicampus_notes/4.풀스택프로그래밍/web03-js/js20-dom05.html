@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            vertical-align: middle;
+            width: 300px;
+            height: 300px;
+        }
+
+        a{
+            font-size: 30px;
+            text-decoration: none;
+        }
+    </style>
+
+    <script>
+        window.onload=function(){
+            var anchs = document.querySelectorAll('a');
+            var img = document.querySelector('img');
+            var count = 1;
+
+            anchs[0].onclick=function(){
+                var imgAlt = img.getAttribute('alt');
+                if (imgAlt == 'img01'){
+                    count = 6;
+                    img.setAttribute('alt', 'img06');
+                    img.setAttribute('src', 'resources/image/img06.png');
+                } else {
+                    img.setAttribute('alt', 'img0'+ (--count));
+                    img.setAttribute('src', 'resources/image/img0' + count + '.png');
+                }
+            }
+
+            anchs[1].onclick=function(){
+                var imgAlt = img.getAttribute('alt');
+                if (imgAlt == 'img06'){
+                    count = 1;
+                    img.setAttribute('alt', 'img01');
+                    img.setAttribute('src', 'resources/image/img01.png');
+                } else {
+                    img.setAttribute('alt', 'img0'+ (++count));
+                    img.setAttribute('src', 'resources/image/img0' + count + '.png');
+                }
+            }
+
+        }
+
+    </script>
+
+</head>
+<body>
+    
+    <div>
+        <a href="#" id="lt">◀️</a>
+        <img src="resources/image/img01.png" alt="img01">
+        <a href="#" id="rt">▶️</a>
+    </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            vertical-align: middle;
+            width: 300px;
+            height: 300px;
+        }
+        a{
+            font-size: 30px;
+            text-decoration: none;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var anchs= document.querySelectorAll('a')
+            var img= document.querySelector('img')
+            var count=1
+
+            anchs[0].onclick=function(){
+                var imgAlt= img.getAttribute('alt')
+                if (imgAlt=='img01') {
+                    count= 6
+                    img.setAttribute('alt','img06')
+                    img.setAttribute('src','resources/image/img06.png')
+                } else {
+                    img.setAttribute('alt','img0'+(--count))
+                    img.setAttribute('src','resources/image/img0'+count+'.png')
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <a href="#" id="lt"> ◀ </a>
+        <img src="resources/image/img01.png" alt="">
+        <a href="" id= "rt"> ▶ </a>
+    </div>
+</body>
+</html> -->

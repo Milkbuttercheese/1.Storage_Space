@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{width:200px; height:200px;}
+        .addSize{width:300px; height: 300px;}
+        .onOffImg{display: none;}
+    </style>
+    <script src="resources/js/jquery-3.6.0.min.js">
+    </script>
+    <script>
+        $(function(){
+            $('#btn').click(function(){
+                $('img').toggleClass('onOffImg')
+            })
+        $('img').click(function(){
+            // 해당 선택자 요소가 'addSize'라는 class가 있으면 true를 리턴함
+            if($(this).hasClass('addSize')){
+                $(this).removeClass('addSize').attr('title','이미지 축소')
+            } else {
+                $(this).addClass('addSize').attr('title','이미지 확대')
+            }
+        })
+        })
+    </script>
+
+</head>
+<body>
+    <button id="btn"> class on/off </button>
+    <br>
+    <img src="resources/image/img01.png" alt="img01" title="이미지 1번">
+    <img src="resources/image/img02.png" alt="img02" title="이미지 2번">
+    <img src="resources/image/img03.png" alt="img03" title="이미지 3번">
+</body>
+</html>

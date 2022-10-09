@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a > img{
+            width:50px;
+            height: 50px;
+        }
+        #gallery{
+            width: 200px;
+            height: 200px;
+        }
+        p{
+            width: 350px;
+            height: 250px;
+        }
+        img{
+            vertical-align: middle;
+        }
+        a{
+            text-decoration: none;
+        }
+    </style>
+    <script>
+        var num=1;
+
+        function prevGallery(){
+            num--;
+            if (num<1){
+                num=6;
+            }
+                document.getElementById('gallery').src='resources/image/img0'+num+'.png'
+                //이벤트 전파 막기(jquery 때 배움)
+                return false
+            
+        }
+        function nextGallery(){
+            num++;
+            if (num > 6){
+                num=1;
+            }
+                document.getElementById('gallery').src='resources/image/img0'+num+'.png'
+                //이벤트 전파 막기(jquery 때 배움)
+                return false
+            
+        }
+    </script>
+</head>
+<body>
+    <div id="gallerywrap">
+        <p>
+            <a href="https://www.naver.com"  onclick="return prevGallery()">
+                <!--return 으로 이벤트의 기본동작을 막음-->
+                <img src="resources/image/arrowleft.png" alt="이전 그림">
+            </a>
+
+            <img src="resources/image/img01.png " alt="갤러리" id="gallery">
+
+            
+            <a href= "#"  onclick="nextGallery()">
+                <img src="resources/image/arrowright.png" alt="">
+            </a>
+        </p>
+    </div>
+</body>
+</html>

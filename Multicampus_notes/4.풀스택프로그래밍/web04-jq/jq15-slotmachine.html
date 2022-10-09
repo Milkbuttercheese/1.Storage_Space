@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="resources/js/jquery-3.6.0.min.js"></script>
+    <style>
+        img{
+            width: 150px;
+            height:150px;
+            float:left;
+
+        }
+        #menubox{position:relaitve;}
+        #menu{overflow:auto}
+        .sel{
+            width:140px;
+            height:140px;
+            border:5px dotted red;
+            position:absolute;
+            left:300px;
+        }
+        button{width:150px; height:50px; margin-left:300px;}
+    </style>
+    <script>
+        /*
+        toggleClass: 클래스가 존재하면 삭제하고 없으면 추가하라는 명령어
+        setInterval(fun_name,t_int):
+        t_inv(ms단위)시간 간격동안 fun_name함수를 시행하라는 명령어
+        attr: 속성을 가져오라는 명령어
+        */
+        $(function(){
+            setInterval(function(){
+                var div= $('#menu')
+                //active란 class를 가진 요소의 첫번째를 div의 막내로 넣어달라
+                $('.active').first().appendTo(div)
+            },50)
+
+            $('button').click(function(){
+                // img에 class='active'를 부여함
+                $('img').toggleClass('active')
+                if($('button').text()=='start'){
+                    $('button').text('stop')
+                }else{
+                    $('button').text('start')
+                    alert($('img:eq(2)').attr('alt'))
+                }
+        })
+        })
+    </script>
+</head>
+<body>
+    <h1>777</h1>
+    <div id="menubox">
+        <div class="sel"></div>
+        <div id="menu">
+            <img src="resources/image/img01.png" alt="img01">
+            <img src="resources/image/img02.png" alt="img02">
+            <img src="resources/image/img03.png" alt="img03">
+            <img src="resources/image/img04.png" alt="img04">
+            <img src="resources/image/img05.png" alt="img05">
+
+        </div>
+    </div>
+    <button>start</button>
+</body>
+</html>

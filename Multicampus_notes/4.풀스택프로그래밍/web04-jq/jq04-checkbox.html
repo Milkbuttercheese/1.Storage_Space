@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="resources/js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            //.submit
+            $('#signal').submit(function(){
+                if($('.infobox').val()==null|| $('.infobox').val()==""){
+                    $('.error').show()
+                // 이벤트 전파 막기
+                return false
+                }
+            }) 
+
+            $('#confirm').click(function(){
+            $('#result').empty()
+            if($('input[name=chk]:checked').length==0){
+                alert('하나 이상 체크 해 주세요')
+            } else { 
+                var total=0 
+                // .each 와 each 다르다는거 구별하기
+                $('input[name=chk]:checked').each(function(i){
+                    var chk =$('input[name=chk]:checked').eq(i)
+                    var book=chk.next().text()
+                    var price=chk.val()
+                    $('#result').append(book+'가격 : '+price+'<br>')
+                    total= total+parseInt(price)
+                })
+                alert(total)
+            }
+        })
+    
+        // 체크 박스가 전체 선택되어 있는 상태에서
+        // 하나라도 체크가 해제되어 있으면 전체 선택의 체크를 해재하자
+        // hint prop
+        $('input[name=chk]').click(function(){
+            if($('input[name=chk]').length== $('input[name=chk]:checked').length){
+                $('input[name=all]').prop('checked',true)
+            } else {
+                $('input[name=all]').prop('checked',false)
+            }
+
+        })
+
+
+        })
+       function allChk(bool){
+           $('input[name=chk]').each(function(){
+               //$(this)는 input[naem==chk]로 지정된 요소들 하나하나를 뜻한다
+               $(this).prop('checked',bool)
+           })
+       }
+       //.prop : javascript 객체의 속성(property)
+       //.attr : html 요소의 속성 (attribute)
+    
+    </script>
+</head>
+<body>
+    <form id="signal" method="get">
+        <div>
+            <span class="label">User ID</span>
+            <input type="text" name="userid" class="infobox">
+            <span class="error" hidden="" style="color: red"> 반드시 입력하세요</span>
+        </div>
+        <input type="submit" class="submit" value="입력">
+    </form>
+    <hr>
+    <fieldset style="width:300px">
+        <legend> 체크 여부 확인 </legend>
+        <input type="checkbox" name="all" onclick="allChk(this.checked)">
+        <br>
+        <input type="checkbox" name="chk" value="30000"><b>python</b><br>
+        <input type="checkbox" name="chk" value="25000"><b>HTML</b><br>
+        <input type="checkbox" name="chk" value="35000"><b>Javascript</b><br>
+        <input type="button" value="확인" id="confirm"><br>
+        <span>선택한 책 가격</span>
+        <div id="result"></div>
+    </fieldset>
+    
+</body>
+</html>

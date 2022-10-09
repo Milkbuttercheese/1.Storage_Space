@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="resources/js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('div').find('b').css({'font-size':'30px', 'color':'red' })
+            $('div').children('#chd').text('2.children() 메서드')
+            //children()으로만 선택하면 자식 모두를 선택한다
+            $('b').parent().css('background-color','skyblue')
+            $('p>b').parents('div').css('border','1px solid red')
+            $('p').eq(0).next().css('display','none')
+        })
+    </script>
+</head>
+<body>
+    <pre>
+        <b> find('selector')
+            선택한 엘리먼트의 자손들 중에 탐색
+        </b>
+        <b>children('selector')
+            선택한 엘리먼트의 자식들 중에 탐색
+        </b>
+        <b>parent/ parents('selector')
+            선택한 엘리먼트 부모/조상 들 중에 탐색
+        </b>
+        <b>next('selector')
+            선택한 엘리먼트 다음 요소 탐색
+        </b>
+    </pre>
+    <div>
+        <p><b>1</b></p>
+        <p id="chd">2</p>
+        <p>3</p>
+        <p>4</p>
+        <p>5</p>
+    </div>
+</body>
+</html>

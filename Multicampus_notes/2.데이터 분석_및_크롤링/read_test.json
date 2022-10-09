@@ -1,0 +1,13 @@
+{
+    "name":{"pandas":"",
+               "numpy":"",
+               "matplotlib":""},
+
+    "year":{"pandas":2008,
+             "numpy":2016,
+             "matplotlib":2022},
+
+    "opensource":{"pandas":"True",
+                       "numpy":"True",
+                       "matplotlib":"True"}
+}

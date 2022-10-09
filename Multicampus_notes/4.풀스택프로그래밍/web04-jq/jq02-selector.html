@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="resources/js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('div:eq(0)').css(
+                {'border':'1px solid red', 'width':'400px', 'height':'200px'})
+            $('#view').css(
+                {'border':'1px solid red','width':'400px','height':'100px'})
+            
+        })
+        function a1(){
+            $('span').css('color','skyblue')
+            $('#view').text('$("span").css("color","skyblue");')
+        }
+        function a2(){
+            $('#t1').css('color','dodgerblue')
+            $('#view').text('$("#t1").css("color","dodgerblue");')
+        }
+        function a3(){
+            jQuery(".t2").css("color","orange")
+            jQuery("#view").text('jQuery(".t2").css("color","orange");')
+        }
+        function a4(){
+            $("li span").css("background-color","yellow")
+            $('#view').text('$("li span").css("backgroud0color","yellow");')
+        }
+        function a5(){
+            $('li>span').css("background-color","aquamarine")
+            $("#view").text("$('li>span').css('background-color','aquamarine')")
+        }
+        function a6(){
+            $('li:nth-child(6)').css('background-color','lime');
+            $('#view').text("$('li:nth-child(6)').css('background-color','lime')")
+        }
+        function a7(){
+            $('li:first-child').css('background-color','violet')
+            $('#view').text("$('li:first-child').css('background-color','violet')")
+        }
+        function a8(){
+            $('li:last-child').css('background-color','black')
+            $('#view').text("$('li:last-child').css('background-color','black')")
+        }
+    </script>
+</head>
+
+<body>
+    <h1> selector </h1>
+    <div>
+        <ul>
+            <li><span>tag로 선택</span></li>
+            <li id="t1">id로 선택</li>
+            <li class="t2">class로 선택</li>
+            <li><span>parent child로 선택</span></li>
+            <li><b><span>parent &gt; child로 선택 </span></b></li>
+            <li>: n-th child(n/odd/even)로 선택 </li>
+            <li>:first-child로 선택 </li>
+            <li>:last-child로 선택 </li>
+            
+        </ul>
+       
+
+        <div>
+            <button onclick="a1()"> 태그 선택(span)</button>
+            <button onclick="a2()"> id 선택(t1)</button>
+            <button onclick="a3()"> class 선택(t2)</button>
+            <button onclick="a4()"> p c 선택</button>
+            <button onclick="a5()"> p &gt; c선택</button>
+            <button onclick="a6()"> n-th child선택</button>
+            <button onclick="a7()"> first-child 선택</button>
+            <button onclick="a8()"> last-child 선택</button>
+        </div>
+    </div>
+    <br><br><br><br><br><br><br>
+    <h2>코드 내용</h2>
+    <div id="view"></div>
+</body>
+</html>

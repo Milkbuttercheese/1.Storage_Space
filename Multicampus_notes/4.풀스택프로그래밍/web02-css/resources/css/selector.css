@@ -1,0 +1,88 @@
+/* 타입 */
+pre {
+    /* <pre> 태그 전체에 적용*/
+    text-align: center;
+}
+
+/* id */
+#multi1 {
+    color: violet;
+}
+
+#multi2 {
+    background-color: skyblue;
+}
+
+/* class */
+.multi2 {
+    background-color: green;
+}
+
+/* 전체 */
+/*
+* {
+    color: black;
+    background-color: white;
+    text-align: left;
+}
+*/
+
+/* 자식 */
+/* > 는 바로 밑에 자식만 선택 */
+#atc>p {
+    background-color: darkmagenta;
+}
+
+#atc>div>p {
+    color: red;
+}
+
+/* 하위 */
+/* 공백은 그 안의 모든 하위 요소를 선택 */
+/* id='atc2' 안의 모든 <span> 요소를 선택 */
+#atc2 span {
+    color: brown;
+}
+
+/* 인접 (형재태그)*/
+/* <span> 태그 옆에 위치한 <pre>태그를 선택 */
+span+pre {
+    color: hotpink;
+}
+
+/* 속성 */
+/* title 속성을 가진 <p> 태그를 모두 선택 */
+p[title] {
+    background-color: beige;
+}
+
+/************** 가상클래스 선택자 ****************/
+/* 링크가 걸려있는 <a> 태그 폰트 사이즈 20pt로 키움. 방문안한 링크 색상 green*/
+a:link {
+    color: green;
+    font-size: 20pt;
+}
+
+/* 방문한 링크 색상 black*/
+a:visited {
+    color: black;
+}
+
+/* a태그 링크에 마우스 올리면 background color yellowgreen으로*/
+a:hover {
+    background-color: yellowgreen;
+}
+
+/* a태그 링크 누르는 순간 */
+a:active {
+    background-color: red;
+    color: yellow;
+}
+
+/* input태그 checked 되었을때*/
+input:checked {
+    width: 100px;
+    height: 100px;
+}
+
+/**********************************************/

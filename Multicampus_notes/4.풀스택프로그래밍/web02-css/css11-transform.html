@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        div{
+            width: 200px;
+            height:200px;
+            background-color: red;
+            color:white;
+            font-size: 30pt;
+            word-wrap: break-word;
+        }
+        #tlate{
+            transform: translate(50px,50px)
+        }
+        #trotate{
+            transform:rotate(30deg);
+        }
+        #tscale{
+            transform: scale(0.6,0.6);
+        }
+        #tskew{
+            transform:skew(0deg,20deg)
+        }
+        #trans{
+            transition: width 0.5s, background-color 1.5s linear, transform 1.5s;
+        }
+        #trans:hover{
+            transform: translate(100px,0px);
+        }
+        li{
+            width: 300px;
+            background: gray;
+            margin-bottom: 3px;
+            font-size: 30px;
+            font-weight: bold;
+            list-style-type: none;
+            transition: width 1s linear, color 1s linear, letter-spacing 1s;
+            cursor: pointer;
+        }
+        li:hover{
+            width: 400px;
+            color: red;
+            letter-spacing: 5px;
+        }
+        
+    </style>
+
+</head>
+<body>
+    <h1> transform </h1>
+    
+    <h2> translate </h2>
+    <div id="tlate">translate(x,y): 위치이동</div>
+    
+    <h2>rotate</h2>
+    <div id="trotate">rotate(deg):회전 </div>
+
+    <h2>scale</h2>
+    <div id="tscale">scale(x,y):크기 </div>
+
+    <h2>skew </h2>
+    <div id="tskew">skew(deg,deg): 변형 </div>
+
+    <h2> transition </h2>
+    <div id="trans"> transition </div>
+
+    <h2> Menu</h2>
+    <ul>
+        <li>학원소개</li>
+        <li>과정소개</li>
+        <li>강사소개</li>
+        <li>시설소개</li>
+    </ul>
+</body>
+</html>
+

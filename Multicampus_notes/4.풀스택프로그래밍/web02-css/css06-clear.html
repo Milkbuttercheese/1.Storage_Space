@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        #wrapper{
+            width: 600px;
+            border: 1px dotted red;
+        }
+        #box1{
+            float:right;
+            width: 200px;
+            padding: 15px;
+            background-color: #ccc;
+        }
+        #box2{
+            float: left;
+            width: 200px;
+            padding: 15px;
+            background-color: pink;
+        }
+        #box3{
+            background-color: gray;
+            padding: 10px;
+            clear: right;
+        }
+    </style>
+<!--clear:left or right는 
+    앞의 box가 float을 통해 위치를 지정하면 뒤에 박스는 나머지 공간을
+    체우는게 원칙이나 clear를 지정하면 그쪽 박스의 float효과를 무시한다
+ -->
+</head>
+<body>
+    <h1>Lorem Ipsum: 더미 텍스트 생성기 </h1>
+    <div id="wrapper">
+        <div id="box1">
+            1.Lorem Ipsum is simply dummy text of the printing and typesetting industry
+        </div>
+        <div id="box2">
+            2.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+        </div>
+        <div id="box3">
+            3.when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        </div>
+
+    </div>
+</body>
+</html>

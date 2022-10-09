@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function strTest01(){
+            var str01='String'
+            var str02='Test'
+            alert(str01+str02)
+            //concat
+            var newString = str01.concat(str02,'Java','Script')
+            alert(newString)
+            //join
+            var joinTest= ['a','b','c','d'].join('_')
+            alert(joinTest)
+        }
+        function strTest02(){
+            var a=1;
+            var b=2.3;
+            var c=false;
+            var result= a+b+c+"abc"+a+b+c
+            // 문자열과 다른 타입을 만나면 다 문자열이 되버린다
+            alert(result)
+        }
+        function strTest03(){
+            var str= prompt('이름을 입력해주세요')
+            var span=document.getElementById('res')
+            if (str=='멀캠'){
+                span.textContent= str+" 님 환영합니다"
+            } else if (str.toLowerCase()=='multicampus'){
+                span.textContent='hello'+str
+            }  else {
+                span.textContent='다시 확인해 주세요'
+            }
+            // 자바스크립트에서 동등연산자==는 데이터타입을 자동변환한다
+            var numVal=10;
+            if (numVal=='10'){
+                alert('==연산자 사용: 숫자 10 == 문자 10')
+            } else {
+                alert('==연산자 사용: 숫자10 != 문자 10')
+            }
+
+            if (numVal==='10'){
+                alert('===연산자 사용: 숫자 10 === 문자 10')
+            } else {
+                alert('===연산자 사용: 숫자10 !=== 문자 10')
+            }
+            //string object(객체)
+            var strObj= new String('멀캠')
+            //string literal 값
+            var strVal='멀캠';
+
+            if (strObj==strVal){
+                alert("strObj==strVal")
+            }else{
+                alert("strObj!=strVal")
+            }
+
+            if (strObj===strVal){
+                alert("strObj===strVal")
+                alert(typeof(strObj))
+                alert(typeof(strVal))
+            }else{
+                alert("strObj!==strVal")
+                alert(typeof(strObj))
+                alert(typeof(strVal))
+            }       
+        }
+
+        function strTest04(){
+            var str='홍길동 이순신 유재석 강호동 홍길동'
+            var inputName= prompt('검색할 이름을 입력하세요')
+            alert('indexOf: '+str.indexOf(inputName))
+            alert('lastIndexOf: '+str.lastIndexOf(inputName))
+            // lastIndexOf는 뒷편에서부터 검색한다
+
+        }
+        function strTest05(){
+            var strVal ='문자열 추출하기. 관련 메서드:indexOf,substring.'
+            var strIdx= strVal.indexOf(":")
+            var endIdx= strVal.lastIndexOf(".")
+            var result= strVal.substring(strIdx+1,endIdx)
+            alert(result)
+        }
+        function strTest06(){
+            var prop= prompt('쉼표로 구분하여 키워드를 입력해주세요',
+            '사과,바나나,수박,참외,포도,딸기')
+            var propArr= prop.split(',')
+            var propRes=""
+            for (var i=0; i<propArr.length; i++){
+                propRes += propArr[i] + "<br>"
+            }
+            document.getElementById('key').innerHTML = propRes;
+        }
+    </script>
+</head>
+<body>
+    <p> 문자열 합치기 
+        <button onclick="strTest01()"> 클릭 </button>
+    </p>
+    <p> 다른 자료형 합치기
+        <button onclick="strTest02()"> 클릭 </button>
+    </p>
+    <p> 문자열 비교하기 
+        <button onclick="strTest03()"> 클릭 </button>
+    </p>
+    <span id="res"></span>
+    <p> 문자열 검색하기 
+        <button onclick="strTest04()"> 클릭 </button>
+    </p>
+    <p> 문자열 추출하기 
+        <button onclick="strTest05()"> 클릭 </button>
+    </p>
+    <p> 키워드 나누기
+        <button onclick="strTest06()"> 클릭 </button>
+    </p>
+    <div id="key"> </div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "..\\..\\.."
+		},
+		{
+			"path": "..\\..\\..\\dse1516-acrostic-poem"
+		},
+		{
+			"path": "..\\..\\..\\acrostic-poem"
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "4.풀스택프로그래밍"
+	}
+}

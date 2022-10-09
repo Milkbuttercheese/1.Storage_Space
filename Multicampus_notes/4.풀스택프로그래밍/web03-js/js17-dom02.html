@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function searchPar(){
+            var child02= document.getElementsByTagName('p')[1];
+            var div= child02.parentNode;
+            console.log(div.nodeName);
+            div.style.backgroundColor="pink"
+        }
+        function searchChi(){
+            var div= document.getElementsByTagName('div')[0];
+            var divChildren=div.childNodes
+            // child02(p tag)의 background 컬러를 블루로 바꾸기
+           console.log(divChildren)
+           // console의 결과 NodeList(7) [text, p, text, p, text, p, text]
+           //<p>child01<p>...<p>child03<p>으로 이어붙이면 [text,text,text]
+           // 엔터도 text node로 인식하기 때문
+           divChildren[3].style.backgroundColor='blue'
+
+        }
+    </script>
+</head>
+<body>
+    <h1> 부모탐색, 자식 탐색 </h1>
+    <div>
+        <p>child01</p>
+        <p>child02</p>
+        <p>child03</p>
+    </div>
+    <button onclick="searchPar()">부모탐색 </button>
+    <br>
+    <button onclick="searchChi()">자식탐색 </button>
+</body>
+</html>
